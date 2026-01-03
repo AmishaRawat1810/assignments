@@ -1,0 +1,88 @@
+# Breakdown of the problem
+1. Convert the inputs, validate them.
+2. Calculate the next date
+3. Provide the output in string
+
+
+
+testCode("Simple increment of a normal day", "10-04-2021", "11-04-2021");
+  testCode("Simple increment of end day of month which ends on 30 except February(02nd month)", "30-04-2021", "01-05-2021");
+  testCode("Simple increment of end day of month which ends on 31 except February(02nd month) and December(12th month)", "31-05-2021", "01-06-2021");
+  testCode("Simple increment of 28th February(02nd month) in a non leap year", "28-02-2021", "01-03-2021");
+  testCode("Simple increment of 28th February(02nd month) in a non leap year", "27-02-2021", "28-02-2021");
+  testCode("Simple increment of 29th February(02nd month) in a leap year", "29-02-2024", "01-03-2024");
+  testCode("Simple increment of 29th February(02nd month) in a leap year", "28-02-2024", "29-02-2024");
+  testCode("Simple increment of 31st December(12th month)", "31-12-2024", "01-01-2025");
+  testCode("Simple increment of a normal day in December(12th month)", "25-12-2024", "26-12-2024");
+  testCode("Simple increment of a day more than 31", "32-10-2024", "Invalid Date");
+  testCode("Simple increment of a day more than 31", "32-12-2024", "Invalid Date");
+  testCode("Simple increment of a day less than 01", "00-10-2024", "Invalid Date");
+  testCode("Simple increment of a day more than 12th month", "14-13-2024", "Invalid Date");
+  testCode("Simple increment of a day less than 1st month", "14-00-2024", "Invalid Date");
+  testCode("Simple increment of 31st day of month which ends on 30 and if month is February", "31-04-2021", "Invalid Date");
+  testCode("Simple increment of 29th February(02nd month) in a non leap year", "29-02-2021", "Invalid Date");
+  testCode("Simple increment of 30th February(02nd month) in a year", "30-02-2024", "Invalid Date");
+  testCode("invalid date ", "00-01-2001", "Invalid Date");
+  testCode("invalid date ", "32-01-2001", "Invalid Date");
+  testCode("invalid date ", "05-13-2001", "Invalid Date");
+  testCode("valid date ", "03-10-2001", "04-10-2001");
+  testCode("february non leap year ", "28-02-2001", "01-03-2001");
+  testCode("february  leap year ", "28-02-2024", "29-02-2024");
+  testCode("changing year ", "31-12-2001", "01-01-2002");
+  testCode("changing year ", "30-12-2001", "31-12-2001");
+  testCode("changing year ", "30-08-2001", "31-08-2001");
+  testCode("changing even months", "30-11-2001", "01-12-2001");
+  testCode("changing odd months", "31-10-2001", "01-11-2001");
+  testCode("changing odd months", "31-10-2001", "01-11-2001");
+  testCode("changing centuary", "31-12-2999", "01-01-3000");
+  testCode("Simple increment of a normal day", "10-04-2021", "11-04-2021");
+  testCode("Simple increment of end day of month which ends on 30 except February(02nd month)", "30-04-2021", "01-05-2021");
+  testCode("Simple increment of end day of month which ends on 31 except February(02nd month) and December(12th month)", "31-05-2021", "01-06-2021");
+  testCode("Simple increment of 28th February(02nd month) in a non leap year", "28-02-2021", "01-03-2021");
+  testCode("Simple increment of 28th February(02nd month) in a non leap year", "27-02-2021", "28-02-2021");
+  testCode("Simple increment of 29th February(02nd month) in a leap year", "29-02-2024", "01-03-2024");
+  testCode("Simple increment of 29th February(02nd month) in a leap year", "28-02-2024", "29-02-2024");
+  testCode("Simple increment of 31st December(12th month)", "31-12-2024", "01-01-2025");
+  testCode("Simple increment of a normal day in December(12th month)", "25-12-2024", "26-12-2024");
+  testCode("Simple increment of a normal day in December(12th month)", "27-12-0000", "28-12-0000");
+  testCode("Simple increment of a normal day in December(12th month)", "27-12-0990", "28-12-0990");
+  testCode("Simple increment of a day more than 31", "32-10-2024", "Invalid Date");
+  testCode("Simple increment of a day more than 31", "32-12-2024", "Invalid Date");
+  testCode("Simple increment of a day less than 01", "00-10-2024", "Invalid Date");
+  testCode("Simple increment of a day more than 12th month", "14-13-2024", "Invalid Date");
+  testCode("Simple increment of a day less than 1st month", "14-00-2024", "Invalid Date");
+  testCode("Simple increment of 31st day of month which ends on 30 and if month is February", "31-04-2021", "Invalid Date");
+  testCode("Simple increment of 29th February(02nd month) in a non leap year", "29-02-2021", "Invalid Date");
+  testCode("Simple increment of 30th February(02nd month) in a year", "30-02-2024", "Invalid Date");
+testCode("invalid date ", "00-01-2001", "Invalid Date");
+  testCode("invalid date ", "32-01-2001", "Invalid Date");
+  testCode("invalid date ", "05-13-2001", "Invalid Date");
+  testCode("valid date ", "03-10-2001", "04-10-2001");
+  testCode("february non leap year ", "28-02-2001", "01-03-2001");
+  testCode("february  leap year ", "28-02-0000", "01-03-0000");
+  testCode("changing year ", "31-12-2001", "01-01-2002");
+  testCode("changing year ", "30-12-2001", "31-12-2001");
+  testCode("changing year ", "30-08-2001", "31-08-2001");
+  testCode("changing even months", "30-11-2001", "01-12-2001");
+  testCode("changing odd months", "31-10-2001", "01-11-2001");
+  testCode("changing odd months", "31-10-2001", "01-11-2001");
+  testCode("changing centuary", "31-12-2999", "01-01-3000");
+  testCode("Simple increment of a normal day", "10-04-2021", "11-04-2021");
+  testCode("Simple increment of end day of month which ends on 30 except February(02nd month)", "30-04-2021", "01-05-2021");
+  testCode("Simple increment of end day of month which ends on 31 except February(02nd month) and December(12th month)", "31-05-2021", "01-06-2021");
+  testCode("Simple increment of 28th February(02nd month) in a non leap year", "28-02-2021", "01-03-2021");
+  testCode("Simple increment of 28th February(02nd month) in a non leap year", "27-02-2021", "28-02-2021");
+  testCode("Simple increment of 29th February(02nd month) in a leap year", "29-02-2024", "01-03-2024");
+  testCode("Simple increment of 29th February(02nd month) in a leap year", "28-02-2024", "29-02-2024");
+  testCode("Simple increment of 31st December(12th month)", "31-12-2024", "01-01-2025");
+  testCode("Simple increment of a normal day in December(12th month)", "25-12-2024", "26-12-2024");
+  testCode("Simple increment of a normal day in December(12th month)", "27-12-0000", "28-12-0000");
+  testCode("Simple increment of a normal day in December(12th month)", "27-12-0990", "28-12-0990");
+  testCode("Simple increment of a day more than 31", "32-10-2024", "Invalid Date");
+  testCode("Simple increment of a day more than 31", "32-12-2024", "Invalid Date");
+  testCode("Simple increment of a day less than 01", "00-10-2024", "Invalid Date");
+  testCode("Simple increment of a day more than 12th month", "14-13-2024", "Invalid Date");
+  testCode("Simple increment of a day less than 1st month", "14-00-2024", "Invalid Date");
+  testCode("Simple increment of 31st day of month which ends on 30 and if month is February", "31-04-2021", "Invalid Date");
+  testCode("Simple increment of 29th February(02nd month) in a non leap year", "29-02-2021", "Invalid Date");
+  testCode("Simple increment of 30th February(02nd month) in a year", "30-02-2024", "Invalid Date");
